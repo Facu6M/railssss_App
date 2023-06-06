@@ -1,0 +1,30 @@
+<h1>Listado de empleados</h1>
+<a href="<%= new_product_path %>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+      <i class="fas fa-flag"></i>
+  </span>
+  <span class="text">Crear empleado</span>
+</a>
+<br><br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Profesion</th>
+      <th>Historial</th>
+      <th>Acciones</th>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= product.name %></td>
+      <td><%= product.reference %></td>
+      <td><%= product.description %></td>
+      <td><%= link_to "Detalles", product_path(product), class: 'btn btn-primary' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
